@@ -36,3 +36,55 @@ def BBI(tinggi,berat):
         BBI_atas = round((24.9*(tinggi/100)**2),2)
         hasil = ("Berat badan ideal untukmu ada di kisaran "+str(BBI_bawah)+" - "+str(BBI_atas)+" kilogram")
         return hasil
+
+# Fungsi AKG
+def AKG(berat,umur,gender,aktif):
+        if gender == "L":
+            if aktif == 1:
+                akg = 1.2*(66+(13.7*berat)+(5*tinggi)-(6.8*umur))
+                hasil = round(akg,2)
+                return hasil
+            elif aktif == 2:
+                akg = 1.375*(66+(13.7*berat)+(5*tinggi)-(6.8*umur))
+                hasil = round(akg,2)
+                return hasil
+            elif aktif == 3:
+                akg = 1.55*(66+(13.7*berat)+(5*tinggi)-(6.8*umur))
+                hasil = round(akg,2)
+                return hasil
+            elif aktif == 4:
+                akg = 1.725*(66+(13.7*berat)+(5*tinggi)-(6.8*umur))
+                hasil = round(akg,2)
+                return hasil
+            else:
+                akg = 1.9*(66+(13.7*berat)+(5*tinggi)-(6.8*umur))
+                hasil = round(akg,2)
+                return hasil
+        elif gender == "P":
+            if aktif == 1:
+                akg = 1.2*(655+(9.6*berat)+(1.8*tinggi)-(4.7*umur))
+                hasil = round(akg,2)
+                return hasil
+            elif aktif == 2:
+                akg = 1.375*(655+(9.6*berat)+(1.8*tinggi)-(4.7*umur))
+                hasil = round(akg,2)
+                return hasil
+            elif aktif == 3:
+                akg = 1.55*(655+(9.6*berat)+(1.8*tinggi)-(4.7*umur))
+                hasil = round(akg,2)
+                return hasil
+            elif aktif == 4:
+                akg = 1.725*(655+(9.6*berat)+(1.8*tinggi)-(4.7*umur))
+                hasil = round(akg,2)
+                return hasil
+            else:
+                akg = 1.9*(655+(9.6*berat)+(1.8*tinggi)-(4.7*umur))
+                hasil = round(akg,2)
+                return hasil
+
+# Fungsi kebutuhan nutrisi
+def nutrisi(AKG, berat, umur, gender, aktif):
+    karbo = round((0.65*AKG(berat,umur,gender,aktif)),2)
+    protein = round((0.15*AKG(berat,umur,gender,aktif)),2)
+    lemak = round((0.2*AKG(berat,umur,gender,aktif)),2)
+    return karbo, protein, lemak
