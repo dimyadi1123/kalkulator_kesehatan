@@ -38,7 +38,7 @@ def BBI(tinggi,berat):
         return hasil
 
 # Fungsi AKG
-def AKG(berat,umur,gender,aktif):
+def AKG(berat,tinggi,umur,gender,aktif):
         if gender == "L":
             if aktif == 1:
                 akg = 1.2*(66+(13.7*berat)+(5*tinggi)-(6.8*umur))
